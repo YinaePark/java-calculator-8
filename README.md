@@ -32,7 +32,10 @@
 - [ ] 단일 숫자 처리
 
 ### 예외 처리
-- [ ] 음수 입력 검증
-- [ ] 숫자가 아닌 문자 입력 검증
-- [ ] 잘못된 커스텀 구분자 형식 검증
-- [ ] `IllegalArgumentException` 발생 및 메시지 처리
+- [x] 빈 값 입력 검증: `requireNotEmptyToken` : 입력 토큰이 비어 있으면 예외 발생
+- [x] 숫자가 아닌 문자 입력 검증: `parseLongOrThrow` : 숫자로 파싱 불가능한 경우 예외 발생
+- [x] 음수 입력 검증: `requireNonNegative` : 음수 값 입력 시 예외 발생
+- [x] 잘못된 커스텀 구분자 형식 검증: `requireValidCustomHeader` : `//...\n` 포맷이 아닌 경우 예외 발생
+- [x] 빈 커스텀 구분자 검증: `requireNonEmptyDelimiter` : 구분자가 비어 있으면 예외 발생
+- [x] 계산 결과 오버플로 검증: `requireNoOverflow` : `Long` 범위를 초과할 경우 예외 발생
+- [x] `IllegalArgumentException` 발생 및 메시지 처리 : 모든 검증 실패 시 일관된 예외 처리 수행  
